@@ -6,7 +6,17 @@
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://ai.studio/apps/drive/145XhPvY9FIoCErHTuthqg0vY4WhAi6J2
+https://cosmicoperatingsystem.github.io/COS/
+https://cosmicoperatingsystem.github.io/COS/google-gnostic-project.html
+https://cosmicoperatingsystem.github.io/COS/gnostic-lineage.html
+https://cosmicoperatingsystem.github.io/COS/quantum-gnostic-framework.html
+https://cosmicoperatingsystem.github.io/COS/quantum-breakdown.html
+https://cosmicoperatingsystem.github.io/COS/gcos-architecture.html
+https://cosmicoperatingsystem.github.io/COS/gdl.html
+https://cosmicoperatingsystem.github.io/COS/gtr.html
+https://cosmicoperatingsystem.github.io/COS/htllm.html
+https://cosmicoperatingsystem.github.io/COS/glossary.html
+https://cosmicoperatingsystem.github.io/COS/policies.html
 
 ## Run Locally
 
