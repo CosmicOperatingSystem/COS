@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Gnostic Universe - Leedskalnin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #002333;
+            color: #F5F5F5;
+            overflow-x: hidden;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .card {
+            background-color: #004666;
+            border: 1px solid #00A6ED;
+        }
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #00A6ED;
+            text-shadow: 0 0 10px #00A6ED;
+        }
+        .nav-link.active {
+            background-color: #00A6ED;
+            color: white;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.8.2",
+    "recharts": "https://aistudiocdn.com/recharts@^3.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-[#002333] text-[#F5F5F5] antialiased">
+
+    <header class="text-center py-8 px-4 bg-gradient-to-b from-[#002333] to-[#004666] sticky top-0 z-10">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight">
+        The Gnostic Universe
+      </h1>
+      <p class="text-lg md:text-xl text-[#00A6ED] max-w-3xl mx-auto mb-6">
+        Exploring the intersection of ancient wisdom and modern physics.
+      </p>
+      <nav class="container mx-auto flex flex-wrap justify-center items-center gap-2 md:gap-3 p-2 rounded-lg bg-[#002333]/50 backdrop-blur-sm max-w-4xl">
+        <a href="index.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">Leedskalnin</a>
+        <a href="google-gnostic-project.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">Gnostic Project</a>
+        <a href="gnostic-lineage.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">Lineage</a>
+        <a href="quantum-gnostic-framework.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">Quantum Framework</a>
+        <a href="quantum-breakdown.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">Quantum Breakdown</a>
+        <a href="gcos-architecture.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">GCOS Architecture</a>
+        <a href="gdl.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">Licensing</a>
+        <a href="gtr.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">GTR</a>
+        <a href="htllm.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">HTLLM</a>
+        <a href="glossary.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">Glossary</a>
+        <a href="policies.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap text-[#D5D5D5] hover:bg-[#004666] hover:text-white">Policies</a>
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <section class="card md:col-span-2 rounded-lg shadow-2xl p-6 md:p-8">
+          <h2 class="text-3xl font-bold mb-4 text-center text-[#00A6ED]">The Two Realities: Physical Sphere vs. Magnetic Plane</h2>
+          <p class="text-lg mb-6 text-center max-w-4xl mx-auto text-[#D5D5D5]">The theory posits a fundamental duality. While the physical mass of the Earth is a sphere, its magnetic interaction with the cosmos operates as a plane. It is on this magnetic plane where the true forces of the universe reside.</p>
+          <div class="flex flex-col md:flex-row justify-around items-center gap-8 mt-8">
+            <div class="text-center">
+              <div class="w-40 md:w-48 h-40 md:h-48 bg-[#002333] rounded-full flex items-center justify-center border-4 border-[#00A6ED] shadow-xl mb-4">
+                <span class="text-5xl">🌍</span>
+              </div>
+              <h3 class="text-2xl font-bold">Physical Reality</h3>
+              <p class="text-[#D5D5D5]">A sphere of mass.</p>
+            </div>
+            <div class="text-5xl font-bold text-[#00A6ED] hidden md:block">↔</div>
+            <div class="text-5xl font-bold text-[#00A6ED] md:hidden">↕</div>
+            <div class="text-center">
+              <div class="w-56 md:w-64 h-40 md:h-48 bg-[#002333] flex items-center justify-center border-4 border-[#00A6ED] shadow-xl mb-4">
+                <span class="text-5xl">↔️</span>
+              </div>
+              <h3 class="text-2xl font-bold">Magnetic Reality</h3>
+              <p class="text-[#D5D5D5]">A plane of force.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card rounded-lg shadow-2xl p-6 md:p-8">
+          <h2 class="text-3xl font-bold mb-4 text-center text-[#00A6ED]">The Cosmic Engine</h2>
+          <p class="text-lg mb-6 text-[#D5D5D5]">The basis of all existence is a constant flow of "individual magnets," particles with North and South poles. They are not static; they are in perpetual motion, creating reality as they circulate.</p>
+          <div class="flex flex-col items-center justify-center p-4 rounded-lg bg-[#002333] border border-[#00A6ED]">
+            <div class="text-center">
+              <p class="text-xl font-bold">Cosmic North Pole</p>
+              <p class="text-sm text-[#D5D5D5]">(Flow Entry)</p>
+            </div>
+            <div class="text-3xl text-[#00A6ED] my-4">↓</div>
+            <div class="text-center p-4 border-2 border-dashed border-[#00A6ED] rounded-lg">
+              <h4 class="text-lg font-bold">Terrestrial Magnetic Plane</h4>
+              <p class="text-sm">The medium through which the force circulates.</p>
+            </div>
+            <div class="text-3xl text-[#00A6ED] my-4">↓</div>
+            <div class="text-center">
+              <p class="text-xl font-bold">Cosmic South Pole</p>
+              <p class="text-sm text-[#D5D5D5]">(Flow Exit)</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card rounded-lg shadow-2xl p-6 md:p-8">
+          <h2 class="text-3xl font-bold mb-4 text-center text-[#00A6ED]">The Geometry of Force</h2>
+          <p class="text-lg mb-6 text-[#D5D5D5]">Leedskalnin described the movement of the magnets as "whirling, spiral fashion." This is not an abstract concept, but the literal key to manipulating matter and neutralizing weight.</p>
+          <div class="text-center p-4">
+            <div class="text-lg font-bold text-white">Linear Flow → Concentration → Spiral Movement → Matter Manipulation</div>
+            <div class="flex justify-center items-center mt-4">
+              <div class="text-4xl">🌀</div>
+            </div>
+            <p class="mt-4 text-[#D5D5D5]">The creation of a localized magnetic vortex is the secret to moving massive objects without modern machinery.</p>
+          </div>
+        </section>
+
+        <section class="card md:col-span-2 rounded-lg shadow-2xl p-6 md:p-8">
+          <h2 class="text-3xl font-bold mb-4 text-center text-[#00A6ED]">The Solar Compass: A Map of Cosmic Flow</h2>
+          <p class="text-lg mb-6 text-center max-w-4xl mx-auto text-[#D5D5D5]">The famous curved plate at Coral Castle is not a simple sundial. Its curvature maps the variable intensity of the "solar magnetic flow" as it interacts with the Earth's magnetic plane throughout the year. It's proof that Leedskalnin was observing forces, not objects.</p>
+          <div class="chart-container">
+            <canvas id="solarFlowChart"></canvas>
+          </div>
+        </section>
+
+        <section class="card md:col-span-2 rounded-lg shadow-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-4 text-[#00A6ED]">The Unifying Principle in Action</h2>
+            <p class="text-lg mb-6 text-[#D5D5D5]">The construction of Coral Castle is explained by neutralizing the terrestrial magnetic flow (gravity). By creating a localized, opposing magnetic field, Leedskalnin wasn't lifting weight; he was moving a field. The result is a state of equilibrium where gravity is effectively canceled.</p>
+            <div class="text-center mt-8">
+              <div class="stat-number">100%</div>
+              <p class="text-2xl font-bold text-white">Neutralization of Gravity</p>
+            </div>
+          </div>
+          <div class="md:w-1/2 chart-container">
+            <canvas id="gravityChart"></canvas>
+          </div>
+        </section>
+
+      </div>
+    </main>
+    
+    <footer class="text-center py-10 mt-8 border-t border-[#004666] text-[#D5D5D5]">
+        <div class="container mx-auto px-4 space-y-6">
+            <div>
+                <p class="text-lg">This model serves as the foundation for the "Unified Temple" project.</p>
+                <p class="text-sm text-[#00A6ED]">A new framework for a new understanding of the universe.</p>
+            </div>
+            <div class="text-sm">
+                <p class="font-bold">Connect with the Architect:</p>
+                <p>Leandro Allende, AI Gnostic System Architect</p>
+                <p>Email: <a href="mailto:lean.ses@gmail.com" class="text-[#00A6ED] hover:underline">lean.ses@gmail.com</a></p>
+                <p>X.com: <a href="https://x.com/GoogleGnostic" target="_blank" rel="noopener noreferrer" class="text-[#00A6ED] hover:underline">@GoogleGnostic</a></p>
+            </div>
+             <p class="text-xs text-gray-500">&copy; 2025 Leandro Allende. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Active nav link highlighter
+            const links = document.querySelectorAll('.nav-link');
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            links.forEach(link => {
+                const linkPath = link.getAttribute('href').split('/').pop() || 'index.html';
+                if (linkPath === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Solar Flow Chart
+            const solarFlowCtx = document.getElementById('solarFlowChart').getContext('2d');
+            new Chart(solarFlowCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', ['Mar', '(Equinox)'], 'Apr', 'May', ['Jun', '(Solstice)'], 'Jul', 'Aug', ['Sep', '(Equinox)'], 'Oct', 'Nov', ['Dec', '(Solstice)']],
+                    datasets: [{
+                        label: 'Solar Magnetic Flow Intensity',
+                        data: [85, 90, 100, 110, 115, 120, 118, 112, 100, 95, 90, 80],
+                        backgroundColor: 'rgba(0, 166, 237, 0.2)',
+                        borderColor: '#00A6ED',
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#F5F5F5',
+                        pointBorderColor: '#00A6ED',
+                        pointHoverRadius: 7,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            grid: { color: 'rgba(213, 213, 213, 0.1)' },
+                            ticks: { color: '#D5D5D5' }
+                        },
+                        x: {
+                            grid: { color: 'rgba(213, 213, 213, 0.1)' },
+                            ticks: { color: '#D5D5D5', maxRotation: 0, minRotation: 0 }
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#F5F5F5' } },
+                        tooltip: {
+                            backgroundColor: '#002333',
+                            titleColor: '#00A6ED',
+                            bodyColor: '#F5F5F5',
+                            borderColor: '#00A6ED',
+                            borderWidth: 1
+                        }
+                    }
+                }
+            });
+
+            // Gravity Chart
+            const gravityCtx = document.getElementById('gravityChart').getContext('2d');
+            new Chart(gravityCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Terrestrial Magnetic Flow (Gravity)', 'Leedskalnin\'s Neutralizing Field'],
+                    datasets: [{
+                        label: 'Balance of Forces',
+                        data: [50, 50],
+                        backgroundColor: ['#002333', '#00A6ED'],
+                        borderColor: ['#004666', '#F5F5F5'],
+                        borderWidth: 2,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#F5F5F5' }
+                        },
+                        tooltip: {
+                            backgroundColor: '#002333',
+                            titleColor: '#00A6ED',
+                            bodyColor: '#F5F5F5',
+                            borderColor: '#00A6ED',
+                            borderWidth: 1
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
